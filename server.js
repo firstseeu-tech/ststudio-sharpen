@@ -55,7 +55,7 @@ const Job = mongoose.model("Job", jobSchema);
 
 // ====== ADMIN LOGIN ======
 const ADMIN_USER = "admin";
-const ADMIN_PASS = $2b$10$CwTycUXWue0Thq9StjUM0uJ8R6Y6Z9erjRzCQXDpUe1koRaSPo6e6";
+const ADMIN_PASS = "$2b$10$CwTycUXWue0Thq9StjUM0uJ8R6Y6Z9erjRzCQXDpUe1koRaSPo6e6";
 
 app.get("/login", (req, res) => {
   res.render("login");
