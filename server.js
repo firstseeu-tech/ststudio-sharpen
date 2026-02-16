@@ -135,3 +135,21 @@ app.get("/track/:id", async (req, res) => {
 });
 
 app.listen(PORT, () => console.log("Server running"));
+// หน้า register
+app.get("/register", (req, res) => {
+  res.render("register");
+});
+
+// สมัครสมาชิก
+app.post("/register", async (req, res) => {
+  const { username, password } = req.body;
+
+  const hashedPassword = await bcrypt.hash(password, 10);
+
+  await User.create({
+    username,
+    password: hashedPassword,
+  });
+
+  res.redirect("/login");
+});
