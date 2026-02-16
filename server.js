@@ -57,7 +57,7 @@ const Job = mongoose.model("Job", jobSchema);
 const ADMIN_USER = "admin";
 const ADMIN_PASS = bcrypt.hashSync("1234",10);
 
-app.get("/login", (req, res) => {
+app.get("/",auth,async (req, res) => {
   res.render("login");
 });
 
