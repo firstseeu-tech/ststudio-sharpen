@@ -57,8 +57,9 @@ const Job = mongoose.model("Job", jobSchema);
 const ADMIN_USER = "admin";
 const ADMIN_PASS = bcrypt.hashSync("1234",10);
 
-app.get("/",auth,async (req, res) => {
-  res.render("login");
+// ====LOGIN PAGE ====
+app.get("/login",(req,res) => {
+   res.render("login");
 });
 
 app.post("/login", async (req, res) => {
